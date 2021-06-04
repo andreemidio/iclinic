@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+drf-yasg = "*"
+prettyconf = "*"
+django-filter = "*"
+whitenoise = "*"
+
+[dev-packages]
+pre-commit = "*"
+commitizen = "*"
+
+[requires]
+python_version = "3.8"
