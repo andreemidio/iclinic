@@ -1,8 +1,8 @@
-name: IClinic Backend CI
+name: IClinic Backend Staging CI
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
   build:
