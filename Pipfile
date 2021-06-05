@@ -17,10 +17,14 @@ gevent = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
 django-extra-fields = "*"
+pytest = "*"
+flake8-django = "*"
 
 [dev-packages]
 pre-commit = "*"
 commitizen = "*"
+flake8 = "*"
+codecov = "*"
 
 [requires]
 python_version = "3.8"
