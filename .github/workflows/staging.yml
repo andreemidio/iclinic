@@ -1,8 +1,8 @@
-name: IClinic Backend CI
+name: IClinic Backend Staging CI
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -26,6 +26,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.4.6
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_NAME}}
+          heroku_app_name: ${{secrets.HEROKU_NAME_STAG}}
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
 
