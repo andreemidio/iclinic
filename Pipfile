@@ -25,6 +25,7 @@ pre-commit = "*"
 commitizen = "*"
 flake8 = "*"
 codecov = "*"
+flake8-django = "*"
 
 [requires]
 python_version = "3.8"
