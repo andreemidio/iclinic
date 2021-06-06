@@ -33,7 +33,7 @@ jobs:
 
       - name: Posting Coverage
         env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
+          CODECOV_TOKEN: "402274fc-7731-4cec-ab0a-9e80d55fadba"
         run: |
           pipenv run codecov
 
