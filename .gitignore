@@ -307,3 +307,6 @@ instance/*
 */.pytest_cache
 /.pytest_cache/
 .pytest_cache/
+
+.idea
+/.idea
