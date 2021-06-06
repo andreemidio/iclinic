@@ -20,7 +20,7 @@ from django.urls import path, include
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
-from rest_framework.authentication import BasicAuthentication
+from rest_framework import authentication
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -33,8 +33,9 @@ schema_view = get_schema_view(
     ),
 
     public=True,
-    authentication_classes=(BasicAuthentication,),
-    permission_classes=(permissions.IsAdminUser,),
+    # authentication_classes=(authentication.BasicAuthentication,),
+    authentication_classes=(authentication.TokenAuthentication,),
+    permission_classes=(permissions.AllowAny,),
 )
 
 urlpatterns = [
