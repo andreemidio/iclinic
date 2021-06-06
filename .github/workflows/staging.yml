@@ -29,14 +29,11 @@ jobs:
           pip install pipenv
           pipenv sync --dev
 
-
-
       - name: Posting Coverage
         env:
           CODECOV_TOKEN: "402274fc-7731-4cec-ab0a-9e80d55fadba"
         run: |
           pipenv run codecov
-
 
       - uses: akhileshns/heroku-deploy@v3.4.6
         with:
