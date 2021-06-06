@@ -19,6 +19,7 @@ psycopg2-binary = "*"
 django-extra-fields = "*"
 pytest = "*"
 flake8-django = "*"
+pytest-django = "*"
 
 [dev-packages]
 pre-commit = "*"
@@ -26,6 +27,8 @@ commitizen = "*"
 flake8 = "*"
 codecov = "*"
 flake8-django = "*"
+faker = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.8"
