@@ -20,6 +20,7 @@ django-extra-fields = "*"
 pytest = "*"
 flake8-django = "*"
 pytest-django = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 pre-commit = "*"
@@ -29,6 +30,7 @@ codecov = "*"
 flake8-django = "*"
 faker = "*"
 pytest-django = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.8"
