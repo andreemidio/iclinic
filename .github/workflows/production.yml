@@ -1,4 +1,4 @@
-name: IClinic Backend CI
+name: IClinic Backend Production CI
 
 on:
   pull_request:
