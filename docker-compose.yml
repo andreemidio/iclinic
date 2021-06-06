@@ -1,0 +1,44 @@
+version: "3.3"
+
+services:
+    web:
+        restart: always
+        build: ./web
+        expose:
+            - "8000"
+        links:
+            - postgres:postgres
+        volumes:
+            - web-django:/usr/src/app
+            - web-static:/usr/src/app/static
+        env_file: .env
+        environment:
+            DEBUG: 'true'
+        command: /usr/local/bin/gunicorn -w 3 -c gunicorn_config.py config.wsgi:application -b :8000
+
+    nginx:
+        restart: always
+        build: ./nginx/
+        ports:
+            - "80:80"
+        volumes:
+            - web-static:/www/static
+        links:
+            - web:web
+
+    postgres:
+        restart: always
+        image: postgres:latest
+        volumes:
+            - pgdata:/var/lib/postgresql/data/
+        environment:
+        - LC_ALL=C.UTF-8
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_USER=postgres
+        ports:
+        - 5433:5432
+
+volumes:
+    web-django:
+    web-static:
+    pgdata:
