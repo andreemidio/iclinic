@@ -23,6 +23,7 @@ pytest-django = "*"
 django-cors-headers = "*"
 scanapi = "*"
 newrelic = "*"
+sentry-sdk = "*"
 
 [dev-packages]
 pre-commit = "*"
