@@ -10,7 +10,7 @@ drf-yasg = "*"
 prettyconf = "*"
 django-filter = "*"
 whitenoise = "*"
-gunicorn = "*"
+gunicorn = {extras = ["gevent"], version = "*"}
 greenlet = "*"
 psycogreen = "*"
 gevent = "*"
