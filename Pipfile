@@ -22,6 +22,7 @@ flake8-django = "*"
 pytest-django = "*"
 django-cors-headers = "*"
 scanapi = "*"
+newrelic = "*"
 
 [dev-packages]
 pre-commit = "*"
