@@ -3,8 +3,10 @@ worker_connections = 25
 workers = 4
 bind = 'unix:///tmp/nginx.socket'
 
+
 def when_ready(server):
     open('/tmp/app-initialized', 'w').close()
+
 
 def pre_fork(server, worker):
     import gevent.monkey

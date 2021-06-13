@@ -1,0 +1,4 @@
+ALLOWED_HOSTS =  localhost, 127.0.0.1
+DEBUG =  True
+SECRET_KEY = oi-eu-sou-o-goku
+ENDPOINT = https://5f71da6964a3720016e60ff8.mockapi.io/v1

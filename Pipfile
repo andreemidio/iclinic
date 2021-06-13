@@ -21,6 +21,7 @@ pytest = "*"
 flake8-django = "*"
 pytest-django = "*"
 django-cors-headers = "*"
+scanapi = "*"
 
 [dev-packages]
 pre-commit = "*"
@@ -31,6 +32,7 @@ flake8-django = "*"
 faker = "*"
 pytest-django = "*"
 autopep8 = "*"
+scanapi = "*"
 
 [requires]
 python_version = "3.8"
