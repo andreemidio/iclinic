@@ -45,7 +45,7 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pipenv run pytest iclinic --cov=iclinic
+          pipenv run pytest . --cov=.
 
       - name: Posting Coverage
         env:
