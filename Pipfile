@@ -31,10 +31,11 @@ commitizen = "*"
 flake8 = "*"
 codecov = "*"
 flake8-django = "*"
-faker = "*"
 pytest-django = "*"
 autopep8 = "*"
 scanapi = "*"
+pytest-drf = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"

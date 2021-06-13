@@ -48,6 +48,6 @@ urlpatterns = [
     url(r'^docs/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    path('api/users/users/', include('apps.users.urls', namespace='users')),
-    path('api/users/prescriptions/', include('apps.prescriptions.urls', namespace='prescriptions')),
+    path('api/v1/users/', include('apps.users.urls', namespace='users')),
+    path('api/v1/prescriptions/', include('apps.prescriptions.urls', namespace='prescriptions')),
 ]
