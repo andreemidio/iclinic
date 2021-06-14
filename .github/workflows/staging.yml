@@ -36,11 +36,9 @@ jobs:
         with:
           python-version: 3.8
 
-
       - name: Copying configurations
         run: |
           cp contrib/env-sample .env
-
 
       - name: Install dependencies
         run: |
@@ -58,11 +56,9 @@ jobs:
         run: |
           python manage.py test
 
-
       - name: Test with pytest
         run: |
           pipenv run pytest . --cov=.
-
 
       - name: Posting Coverage
         env:
