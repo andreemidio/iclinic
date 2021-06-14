@@ -43,18 +43,17 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pipenv
-          pipenv sync
           pipenv sync --dev
 
       - name: Check Syntax
         run: |
-          pycodestyle --statistics .
+          pipenv run pycodestyle --statistics .
       - name: Run Migrations
         run: |
-          python manage.py migrate
+          pipenv run python manage.py migrate
       - name: Run Test
         run: |
-          python manage.py test
+          pipenv run python manage.py test
 
       - name: Test with pytest
         run: |
