@@ -1,4 +1,4 @@
-name: automerge
+name: Automerge PR's IClinic
 on:
   pull_request:
     types:
