@@ -13,7 +13,7 @@ services:
             - web-static:/usr/src/app/static
         env_file: .env
         environment:
-            DEBUG: 'true'
+            DEBUG: 'True'
 
         command: /usr/local/bin/python manage.py migrate & /usr/local/bin/gunicorn -w 3 -c gunicorn_config.py config.wsgi:application -b :8000
 
