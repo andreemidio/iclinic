@@ -24,6 +24,7 @@ django-cors-headers = "*"
 scanapi = "*"
 newrelic = "*"
 sentry-sdk = "*"
+django-admin-honeypot = "*"
 
 [dev-packages]
 pre-commit = "*"
@@ -37,7 +38,6 @@ scanapi = "*"
 pytest-drf = "*"
 pytest = "*"
 pytest-cov = "*"
-
 
 [requires]
 python_version = "3.8"
