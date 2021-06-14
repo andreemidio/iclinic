@@ -46,10 +46,12 @@ jobs:
           pipenv sync --dev
 
       - name: Run migrations
-        run: python manage.py migrate
+        run: |
+          python manage.py migrate
 
       - name: Run tests
-        run: python manage.py test
+        run: |
+          python manage.py test
 
 
       - name: Test with pytest
