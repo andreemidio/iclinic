@@ -19,13 +19,15 @@ jobs:
 
     services:
       postgres:
-        image: postgres:11.5
+        image: postgres
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: postgres
-        ports: ['5432:5432']
+        ports:
+          - 5432:5432
 
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
       - uses: actions/checkout@v2
@@ -34,11 +36,9 @@ jobs:
         with:
           python-version: 3.8
 
-
       - name: Copying configurations
         run: |
           cp contrib/env-sample .env
-
 
       - name: Install dependencies
         run: |
@@ -46,19 +46,19 @@ jobs:
           pipenv sync
           pipenv sync --dev
 
-      - name: Run migrations
+      - name: Check Syntax
+        run: |
+          pycodestyle --statistics .
+      - name: Run Migrations
         run: |
           python manage.py migrate
-
-      - name: Run tests
+      - name: Run Test
         run: |
           python manage.py test
-
 
       - name: Test with pytest
         run: |
           pipenv run pytest . --cov=.
-
 
       - name: Posting Coverage
         env:
@@ -71,10 +71,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_NAME_STAG}}
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
-
-      - name: Merge Pull Request
-        uses: juliangruber/merge-pull-request-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          number: 1
-          method: squash

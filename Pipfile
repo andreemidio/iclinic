@@ -25,6 +25,7 @@ scanapi = "*"
 newrelic = "*"
 sentry-sdk = "*"
 django-admin-honeypot = "*"
+pycodestyle = "*"
 
 [dev-packages]
 pre-commit = "*"
@@ -38,6 +39,7 @@ scanapi = "*"
 pytest-drf = "*"
 pytest = "*"
 pytest-cov = "*"
+pycodestyle = "*"
 
 [requires]
 python_version = "3.8"
