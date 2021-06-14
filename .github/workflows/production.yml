@@ -22,6 +22,11 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+
+      - name: Copying configurations
+        run: |
+          cp contrib/env-sample .env
+
       - name: Install dependencies
         run: |
           pip install pipenv
@@ -29,7 +34,8 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pipenv run pytest iclinic --cov=iclinic
+          pipenv run pytest . --cov=.
+
 
       - name: Posting Coverage
         env:
