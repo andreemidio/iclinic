@@ -43,6 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install pipenv
+          pipenv sync
           pipenv sync --dev
 
       - name: Run migrations
