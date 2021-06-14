@@ -34,14 +34,25 @@ jobs:
         with:
           python-version: 3.8
 
+
       - name: Copying configurations
         run: |
           cp contrib/env-sample .env
+
 
       - name: Install dependencies
         run: |
           pip install pipenv
           pipenv sync --dev
+
+      - name: Run migrations
+        run: |
+          python manage.py migrate
+
+      - name: Run tests
+        run: |
+          python manage.py test
+
 
       - name: Test with pytest
         run: |
