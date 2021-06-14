@@ -59,3 +59,9 @@ jobs:
           heroku_app_name: ${{secrets.HEROKU_NAME_STAG}}
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
 
+      - name: Merge Pull Request
+        uses: juliangruber/merge-pull-request-action@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: 1
+          method: squash
