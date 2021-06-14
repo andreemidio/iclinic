@@ -99,10 +99,10 @@ def test_prescription_serializer():
     assert serializer.data == data
 
 
-@pytest.mark.django_db(True)
-def test_list_prescription():
-    prescription = Prescriptions.objects.all()
-
-    serializer = ListPrecriptionsSerializers(instance=prescription, many=True)
-
-    assert serializer.data
+# @pytest.mark.django_db(True)
+# def test_list_prescription():
+#     prescription = Prescriptions.objects.all()
+#
+#     serializer = ListPrecriptionsSerializers(instance=prescription, many=True)
+#
+#     assert serializer.data
