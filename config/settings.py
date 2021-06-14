@@ -46,10 +46,12 @@ DJANGO_APPS = [
 ]
 
 THIRD_APPS = [
+    'admin_honeypot',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
     'drf_yasg',
+
 ]
 
 LOCAL_APPS = [
@@ -154,7 +156,6 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
-
 SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': True,
     'SECURITY_DEFINITIONS': {
@@ -200,7 +201,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 LOGGING = {
     'version': 1,

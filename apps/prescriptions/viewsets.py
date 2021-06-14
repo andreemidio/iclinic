@@ -4,14 +4,16 @@ from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
 from apps.prescriptions.models import Prescriptions
-from apps.prescriptions.serializers import PrecriptionsSerializers, ListPrecriptionsSerializers
+from apps.prescriptions.serializers import (
+    PrecriptionsSerializers,
+    ListPrecriptionsSerializers)
 
 
 class PostUserPrescriptionsViewSet(mixins.CreateModelMixin, GenericViewSet):
     queryset = Prescriptions.objects.all()
     serializer_class = PrecriptionsSerializers
-    renderer_classes = [renderers.StaticHTMLRenderer, renderers.TemplateHTMLRenderer, renderers.JSONRenderer]
-    parser_classes = (parsers.MultiPartParser, parsers.JSONParser, parsers.FormParser)
+    renderer_classes = [renderers.StaticHTMLRenderer,  renderers.JSONRenderer]
+    parser_classes = (parsers.MultiPartParser, parsers.JSONParser,)
     permission_classes = (permissions.AllowAny,)
 
     def create(self, request, *args, **kwargs):
@@ -30,11 +32,6 @@ class PostUserPrescriptionsViewSet(mixins.CreateModelMixin, GenericViewSet):
 class ListUserPrescriptionsViewSet(mixins.ListModelMixin, GenericViewSet):
     queryset = Prescriptions.objects.all()
     serializer_class = ListPrecriptionsSerializers
-    renderer_classes = [renderers.StaticHTMLRenderer, renderers.TemplateHTMLRenderer, renderers.JSONRenderer]
-    parser_classes = (parsers.MultiPartParser, parsers.JSONParser, parsers.FormParser)
+    renderer_classes = [renderers.StaticHTMLRenderer, renderers.JSONRenderer]
+    parser_classes = (parsers.MultiPartParser, parsers.JSONParser,)
     permission_classes = (permissions.AllowAny,)
-    # filter_backends = ('id',)
-
-    # def get_queryset(self):
-    #
-    #     data =
