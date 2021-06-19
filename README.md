@@ -2,7 +2,7 @@
 
 Esse projeto, eu criei dois ambientes, staging e production.
 
-![Heroku Servers](images/2021-06-19 16_26_32-Window.png)
+![Heroku Servers](https://github.com/andreemidio/iclinic/blob/feature/prescriptions/images/2021-06-19%2016_26_32-Window.png?raw=true)
 
 Ambos os ambientes estão com a mesma configuração
 
@@ -14,5 +14,7 @@ New Relic APM -> Para monitoria da aplicação e análise de erros<br>
 
 Sentry -> Para monitoria das exceções da aplicação <br>
 
-![Resources](images/2021-06-19 16_33_21-Window.png)
+![Resources](https://github.com/andreemidio/iclinic/blob/feature/prescriptions/images/2021-06-19%2016_33_21-Window.png?raw=true)
+
+
 
