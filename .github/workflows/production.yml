@@ -46,9 +46,6 @@ jobs:
           pip install pipenv
           pipenv sync --dev
 
-      #      - name: Check Syntax
-      #        run: |
-      #          pipenv run pycodestyle --statistics .
       - name: Run Migrations
         run: |
           pipenv run python manage.py migrate
@@ -69,5 +66,8 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.4.6
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_NAME_STAG}}
+          heroku_app_name: ${{secrets.HEROKU_NAME_PROD}}
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
+
+      - name: Auto-Merge Pull Request
+        uses: reitermarkus/automerge@v1.5.2
