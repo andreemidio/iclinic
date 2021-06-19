@@ -5,16 +5,6 @@ on:
     branches:
       - develop
 
-
-  pull_request_target:
-    types:
-      - opened
-      -
-  workflow_dispatch:
-    inputs:
-      pull-request:
-        description: Pull Request Number
-        required: false
 jobs:
   build:
     env:
@@ -82,11 +72,5 @@ jobs:
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
 
 
-      - uses: reitermarkus/automerge@v2
-        with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
-          merge-method: rebase
-          do-not-merge-labels: never-merge
-          required-labels: automerge
-          pull-request: ${{ github.event.inputs.pull-request }}
-          dry-run: true
+      - name: Auto-Merge Pull Request
+        uses: reitermarkus/automerge@v1.5.2
