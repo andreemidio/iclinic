@@ -5,6 +5,17 @@ on:
     branches:
       - develop
 
+
+  pull_request_target:
+    types:
+      - opened
+
+  # Try enabling auto-merge for the specified pull request or all open pull requests if none is specified.
+  workflow_dispatch:
+    inputs:
+      pull-request:
+        description: Pull Request Number
+        required: false
 jobs:
   build:
     env:
@@ -70,7 +81,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_NAME_STAG}}
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
-
 
       - name: Auto-Merge Pull Request
         uses: reitermarkus/automerge@v1.5.2
