@@ -21,16 +21,17 @@ class RequestEndPoint:
             url = f"{self.ENDPOINT}/{sigla}/{id}"
             request = requests.get(url)
 
-            if request.text == "Not found":
-                not_found = dict(
-                    error=dict(
-                        message="patient not found",
-                        code="03"
-                    )
+            if not request.status_code == 404:
+                return request.json()
 
+            not_found = dict(
+                error=dict(
+                    message="patient not found",
+                    code="03"
                 )
-                return not_found
-            return request.json()
+
+            )
+            return not_found
         except ConnectionError as connection:
             logging.error(str(connection))
             _connection = dict(
@@ -40,26 +41,21 @@ class RequestEndPoint:
             return _connection
 
     def physicians(self, sigla='physicians', id=None):
-
         try:
-
             url = f"{self.ENDPOINT}/{sigla}/{id}"
             request = requests.get(url)
+            if not request.status_code == 404:
+                return request.json()
 
-            if request.text == "Not found":
-                not_found = dict(
-                    error=dict(
-                        message="physician not found",
-                        code="02"
-                    )
-
+            not_found = dict(
+                error=dict(
+                    message="physician not found",
+                    code="02"
                 )
-                return not_found
 
-            return request.json()
-
+            )
+            return not_found
         except ConnectionError as connection:
-
             logging.error(str(connection))
             _connection = dict(
                 error="physicians service not available",
@@ -68,14 +64,14 @@ class RequestEndPoint:
 
             return _connection
 
-    def metrics_request(self, sigla='metrics'):
+    def metrics_request(self, sigla='metrics', clinics_id=None, patients_id=None, physicians_id=None):
 
         try:
             url = f"{self.ENDPOINT}/{sigla}"
 
-            clinics = self.clinics()
-            patients = self.patients()
-            physicians = self.physicians()
+            clinics = self.clinics(id=clinics_id)
+            patients = self.patients(id=patients_id)
+            physicians = self.physicians(id=physicians_id)
 
             payload = dict(
                 clinic_id=clinics['id'],
@@ -100,7 +96,6 @@ class RequestEndPoint:
             )
             return _connection
 
-
-if __name__ == "__main__":
-    r = RequestEndPoint()
-    r.metrics_request()
+# if __name__ == "__main__":
+#     r = RequestEndPoint()
+#     r.metrics_request()
