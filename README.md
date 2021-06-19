@@ -1,5 +1,7 @@
 "# IClinic Challenge"
 
+[![codecov](https://codecov.io/gh/andreemidio/iclinic/branch/main/graph/badge.svg?token=Y8XSDLGJQ9)](https://codecov.io/gh/andreemidio/iclinic)
+
 Projeto Django Rest Framework, baseado em diversas fontes de pesquisa e cursos que fiz para a melhor arquitetura e
 separação das responsabilidades.
 
