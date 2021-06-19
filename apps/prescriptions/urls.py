@@ -7,7 +7,7 @@ app_name = 'prescriptions'
 
 router = routers.DefaultRouter()
 
-router.register(r'c', PostUserPrescriptionsViewSet, basename='add')
+router.register(r'add', PostUserPrescriptionsViewSet, basename='add')
 router.register(r'list', ListUserPrescriptionsViewSet, basename='list')
 
 urlpatterns = [
