@@ -42,7 +42,7 @@ iclinic-challenge-andre-prod :  https://iclinic-challenge-andre-prod.herokuapp.c
 
 O Projeto contem CI/CD com o Heroku e testes integrados.
 
-![Heroku Servers](https://github.com/andreemidio/iclinic/blob/feature/prescriptions/images/2021-06-19%2016_26_32-Window.png?raw=true)
+![Heroku Servers](images/2021-06-19%2016_26_32-Window.png)
 
 Ambos os ambientes estão com a mesma configuração.
 
@@ -54,7 +54,7 @@ New Relic APM -> Para monitoria da aplicação e análise de erros.<br>
 
 Sentry -> Para monitoria das exceções da aplicação. <br>
 
-![Resources](https://github.com/andreemidio/iclinic/blob/feature/prescriptions/images/2021-06-19%2016_33_21-Window.png?raw=true)
+![Resources](images/2021-06-19%2016_33_21-Window.png)
 
 Adicionei Proxy reverso para encobrir o servidor e o PgBouncer para gerenciar as conexões com o banco de dados.
 
