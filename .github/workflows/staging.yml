@@ -78,6 +78,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_NAME_STAG}}
           heroku_email: ${{secrets.HEROKU_USER_EMAIL}}
-
-      - name: Auto-Merge Pull Request
-        uses: reitermarkus/automerge@v1.5.2
