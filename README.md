@@ -58,3 +58,5 @@ Sentry -> Para monitoria das exceções da aplicação. <br>
 
 Adicionei Proxy reverso para encobrir o servidor e o PgBouncer para gerenciar as conexões com o banco de dados.
 
+
+A modelagem do banco de dados fiz dessa forma para ganhar tempo, mas  o correto, para cada chave ter uma tabela separada para alocar os dados.
