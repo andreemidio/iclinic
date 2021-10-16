@@ -6,15 +6,15 @@ request_endpoint = RequestEndPoint()
 def test_clinics():
     data = request_endpoint.clinics(id=1)
 
-    assert data['name'] == 'Dr. Kennith Bednar'
+    assert data['name'] == 'Shaun Ledner'
 
 
 def test_patients_sucess():
     data = request_endpoint.patients(id=1)
 
-    assert data['name'] == 'Walter Ziemann'
-    assert data['email'] == 'Muriel4@gmail.com'
-    assert data['phone'] == '1-853-068-7209 x379'
+    assert data['name'] == 'Claude Funk'
+    assert data['email'] == 'Ross49@gmail.com'
+    assert data['phone'] == '(263) 369-7435 x40648'
 
 
 def test_patients_not_found():
