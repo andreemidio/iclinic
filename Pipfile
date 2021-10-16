@@ -1,0 +1,42 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+djangorestframework = "*"
+drf-yasg = "*"
+prettyconf = "*"
+django-filter = "*"
+whitenoise = "*"
+gunicorn = {extras = ["gevent"], version = "*"}
+greenlet = "*"
+psycogreen = "*"
+gevent = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
+django-extra-fields = "*"
+django-cors-headers = "*"
+newrelic = "*"
+sentry-sdk = "*"
+django-admin-honeypot = "*"
+
+[dev-packages]
+pytest = "*"
+django-test-migrations = "*"
+scanapi = "*"
+pre-commit = "*"
+commitizen = "*"
+flake8 = "*"
+codecov = "*"
+flake8-django = "*"
+pytest-django = "*"
+autopep8 = "*"
+pytest-drf = "*"
+pytest-cov = "*"
+pycodestyle = "*"
+safety = "*"
+
+[requires]
+python_version = "3.8"
