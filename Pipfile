@@ -41,6 +41,7 @@ pytest-drf = "*"
 pytest = "*"
 pytest-cov = "*"
 pycodestyle = "*"
+safety = "*"
 
 [requires]
 python_version = "3.8"
