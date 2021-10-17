@@ -59,7 +59,7 @@ jobs:
       - name: Verified Security Libs
         run: |
           pip install safety
-          safety check
+          safety check --full-report
 
       - name: Run Migrations
         run: |
