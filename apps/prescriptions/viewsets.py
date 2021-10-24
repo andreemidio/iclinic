@@ -1,12 +1,11 @@
 # Create your views here.
-from rest_framework import mixins, renderers, parsers, permissions, status
+from rest_framework import mixins, parsers, permissions, renderers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
 from apps.prescriptions.models import Prescriptions
-from apps.prescriptions.serializers import (
-    PrecriptionsSerializers,
-    ListPrecriptionsSerializers)
+from apps.prescriptions.serializers import (ListPrecriptionsSerializers,
+                                            PrecriptionsSerializers)
 from apps.prescriptions.services import RequestEndPoint
 
 request_endpoint = RequestEndPoint()
@@ -57,3 +56,4 @@ class ListUserPrescriptionsViewSet(mixins.ListModelMixin, GenericViewSet):
     renderer_classes = [renderers.StaticHTMLRenderer, renderers.JSONRenderer]
     parser_classes = (parsers.MultiPartParser, parsers.JSONParser,)
     permission_classes = (permissions.AllowAny,)
+

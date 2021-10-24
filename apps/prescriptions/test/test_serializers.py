@@ -2,8 +2,11 @@ import pytest
 from rest_framework import exceptions
 
 from apps.prescriptions.models import Prescriptions
-from apps.prescriptions.serializers import PrecriptionsSerializers, PatientSerializer, ListPrecriptionsSerializers, \
-    ClinicSerializer, PhysicianSerializer
+from apps.prescriptions.serializers import (ClinicSerializer,
+                                            ListPrecriptionsSerializers,
+                                            PatientSerializer,
+                                            PhysicianSerializer,
+                                            PrecriptionsSerializers)
 
 
 def test_clinic_serializer():

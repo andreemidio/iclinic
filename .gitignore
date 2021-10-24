@@ -313,3 +313,9 @@ instance/*
 
 .vscode
 /.vscode
+
+htmlcov
+.pytest_cache
+.coverage
+debug.log
+.idea
