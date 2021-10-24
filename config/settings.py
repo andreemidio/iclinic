@@ -266,7 +266,7 @@ if DEBUG is False:
     SECURE_HSTS_SECONDS = 1
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-BROKER_URL = config('BROKER_URL')
+CLOUDAMQP_URL = config('CLOUDAMQP_URL')
 
 # Celery Configuration Options
 CELERY_TIMEZONE = 'America/Sao_Paulo'

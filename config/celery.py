@@ -17,7 +17,7 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Load task modules from all registered Django apps.
 
 app = Celery('iclinic',
-             broker=settings.BROKER_URL,
+             broker=settings.CLOUDAMQP_URL,
              )
 
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
