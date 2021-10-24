@@ -57,6 +57,7 @@ THIRD_APPS = [
 ]
 
 LOCAL_APPS = [
+    'apps.exchange.apps.ExchangeConfig',
     'apps.prescriptions.apps.PrescriptionsConfig',
     'apps.users.apps.UsersConfig',
 ]
@@ -265,7 +266,7 @@ if DEBUG is False:
     SECURE_HSTS_SECONDS = 1
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-broker_url = config('BROKER_URL')
+BROKER_URL = config('BROKER_URL')
 
 # Celery Configuration Options
 CELERY_TIMEZONE = 'America/Sao_Paulo'
