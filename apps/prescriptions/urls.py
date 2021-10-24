@@ -1,7 +1,8 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 
-from apps.prescriptions.viewsets import PostUserPrescriptionsViewSet, ListUserPrescriptionsViewSet
+from apps.prescriptions.viewsets import (ListUserPrescriptionsViewSet,
+                                         PostUserPrescriptionsViewSet)
 
 app_name = 'prescriptions'
 

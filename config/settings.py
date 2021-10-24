@@ -51,6 +51,8 @@ THIRD_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'drf_yasg',
+    'django_celery_beat',
+    'django_celery_results',
 
 ]
 
@@ -262,3 +264,11 @@ if DEBUG is False:
     SECURE_HSTS_PRELOAD = True
     SECURE_HSTS_SECONDS = 1
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+broker_url = config('BROKER_URL')
+
+# Celery Configuration Options
+CELERY_TIMEZONE = 'America/Sao_Paulo'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_RESULT_BACKEND = 'django-db'

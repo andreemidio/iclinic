@@ -1,5 +1,4 @@
-from rest_framework import mixins
-from rest_framework import renderers, parsers, permissions
+from rest_framework import mixins, parsers, permissions, renderers
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.compat import coreapi, coreschema
