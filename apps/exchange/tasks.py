@@ -1,16 +1,17 @@
 from config.celery import app
+from celery import shared_task
+from celery import shared_task
+from datetime import datetime
 
 
-@app.task
-def add(x, y):
-    return x + y
 
+@shared_task(name = "print_msg_main")
+def print_message():
+  print(f"Celery is working!! Message is ")
 
-@app.task
-def mul(x, y):
-    return x * y
-
-
-@app.task
-def xsum(numbers):
-    return sum(numbers)
+@shared_task(name = "print_time")
+def print_time():
+  now = datetime.now()
+  current_time = now.strftime("%H:%M:%S")
+  print(f"Current Time is {current_time}")
+  

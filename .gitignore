@@ -319,3 +319,8 @@ htmlcov
 .coverage
 debug.log
 .idea
+
+
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
