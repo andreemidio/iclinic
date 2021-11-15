@@ -324,3 +324,5 @@ debug.log
 celerybeat-schedule.bak
 celerybeat-schedule.dat
 celerybeat-schedule.dir
+
+Pipfile.lock
