@@ -1,4 +1,4 @@
-[[source]]
+ [[source]]
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
@@ -21,6 +21,11 @@ django-cors-headers = "*"
 newrelic = "*"
 sentry-sdk = "*"
 django-admin-honeypot = "*"
+celery = {extras = ["auth", "librabbitmq", "msgpack", "redis"], version = "*"}
+pymongo = {extras = ["gssapi", "snappy", "srv", "tls"], version = "*"}
+dnspython = "*"
+django-celery-beat = "*"
+django-celery-results = "*"
 
 [dev-packages]
 pytest = "*"
@@ -37,6 +42,7 @@ pytest-drf = "*"
 pytest-cov = "*"
 pycodestyle = "*"
 safety = "*"
+isort = "*"
 
 [requires]
 python_version = "3.8"

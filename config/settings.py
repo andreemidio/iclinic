@@ -16,6 +16,7 @@ from pathlib import Path
 import sentry_sdk
 from dj_database_url import parse as dburl
 from prettyconf import Configuration
+from sentry_sdk.integrations.celery import CeleryIntegration
 from sentry_sdk.integrations.django import DjangoIntegration
 
 config = Configuration()
@@ -51,10 +52,13 @@ THIRD_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'drf_yasg',
+    'django_celery_beat',
+    'django_celery_results',
 
 ]
 
 LOCAL_APPS = [
+    'apps.exchange.apps.ExchangeConfig',
     'apps.prescriptions.apps.PrescriptionsConfig',
     'apps.users.apps.UsersConfig',
 ]
@@ -251,7 +255,7 @@ SENTRY_DSN = config('SENTRY_DSN', default=None)
 if SENTRY_DSN:  # pragma: no cover
     sentry_sdk.init(
         dsn=SENTRY_DSN,
-        integrations=[DjangoIntegration()]
+        integrations=[DjangoIntegration(), CeleryIntegration()]
     )
 
 if DEBUG is False:
@@ -262,3 +266,20 @@ if DEBUG is False:
     SECURE_HSTS_PRELOAD = True
     SECURE_HSTS_SECONDS = 1
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+CLOUDAMQP_URL = config('CLOUDAMQP_URL')
+
+# Celery Configuration Options
+CELERY_TIMEZONE = 'America/Sao_Paulo'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+ 
+CELERY_BROKER_URL = CLOUDAMQP_URL
+CELERY_RESULT_BACKEND = 'django-db'
+
+CELERY_ACCEPT_CONTENT = ['application/json']  
+CELERY_TASK_SERIALIZER = 'json'  
+CELERY_RESULT_SERIALIZER = 'json'
+
+#celery -A config beat -l debug  
+#celery -A config worker -l debug

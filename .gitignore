@@ -313,3 +313,16 @@ instance/*
 
 .vscode
 /.vscode
+
+htmlcov
+.pytest_cache
+.coverage
+debug.log
+.idea
+
+
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
+
+Pipfile.lock
